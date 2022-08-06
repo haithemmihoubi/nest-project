@@ -1,10 +1,25 @@
 version: "3.3"
 services:
+# app name
   nest-app:
+  # conrainer name when running and building
     container_name: nestjs-app-containerized
+    # the image to use
     image: nestjs-app
+    # build the image from the Dockerfile where it is located
     build: .
+    # ports to expose
     ports:
       - "3000:3000"
+    # volumes to mount to the container
     volumes:
       - ./src:/app/src:ro
+    # environment variables to set in the container
+    environment:
+        - NODE_ENV=development
+        - PORT=3000
+    # environment variables to set in the container located in a file
+    # when running the container
+    env_file:
+      - .env
+
