@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  nest-app:
+    container_name: nestjs-app-container
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src:ro
