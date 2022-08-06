@@ -11,15 +11,6 @@ services:
     # ports to expose
     ports:
       - "3000:3000"
-    # volumes to mount to the container
-    volumes:
-      - ./src:/app/src:ro
-    # environment variables to set in the container
-    environment:
-        - NODE_ENV=development
-        - PORT=3000
-    # environment variables to set in the container located in a file
-    # when running the container
     env_file:
-      - .env
+      - ./.env
 

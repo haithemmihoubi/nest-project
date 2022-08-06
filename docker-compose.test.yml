@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  nest-app:
+    volumes:
+      - ./src:/app/src:ro
+    environment:
+      - NODE_ENV=test
+      - PORT=3000
+

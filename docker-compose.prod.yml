@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  # app name
+  nest-app:
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+
+
