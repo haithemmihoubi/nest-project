@@ -1,7 +1,8 @@
 version: "3.3"
 services:
   nest-app:
-    container_name: nestjs-app-container
+    container_name: nestjs-app-containerized
+    image: nestjs-app
     build: .
     ports:
       - "3000:3000"
