@@ -2,15 +2,19 @@ version: "3.3"
 services:
 # app name
   nest-app:
-  # conrainer name when running and building
+  # container name when running and building
     container_name: nestjs-app-containerized
     # the image to use
     image: nestjs-app
-    # build the image from the Dockerfile where it is located
-    build: .
     # ports to expose
     ports:
       - "3000:3000"
     env_file:
       - ./.env
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
 
